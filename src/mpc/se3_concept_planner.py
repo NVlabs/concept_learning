@@ -61,7 +61,7 @@ class SE3ConceptPlanner(object):
 
         world_yml = join_path(get_gym_configs_path(), world_file)
         with open(world_yml) as file:
-            world_params = yaml.load(file, Loader=yaml.FullLoader)     
+            world_params = yaml.safe_load(file)
 
         # Create world.
         self.w_T_r = gymapi.Transform()

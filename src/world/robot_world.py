@@ -37,7 +37,7 @@ class RobotWorld(BasicWorld):
         robot_file = args.robot + '.yml'
         robot_yml = join_path(get_gym_configs_path(), robot_file)
         with open(robot_yml) as file:
-            robot_params = yaml.load(file, Loader=yaml.FullLoader)
+            robot_params = yaml.safe_load(file)
 
         # Define robot parameters and create robot simulation.
         sim_params = robot_params['sim_params']
