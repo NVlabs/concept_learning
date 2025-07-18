@@ -58,7 +58,7 @@ class BasicWorld(object):
         world_file = 'collision_table.yml'
         world_yml = join_path(get_gym_configs_path(), world_file)
         with open(world_yml) as file:
-            self.world_params = yaml.load(file, Loader=yaml.FullLoader)
+            self.world_params = yaml.safe_load(file)
         
         self.num_envs = args.envs
 

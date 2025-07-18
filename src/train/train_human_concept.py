@@ -31,7 +31,7 @@ if __name__ == "__main__":
 	# Load yaml parameters.
 	here = os.path.dirname(os.path.abspath(__file__))
 	with open(here+args.config, 'r') as stream:
-		params = yaml.load(stream)
+		params = yaml.safe_load(stream)
 
 	# Set random seed if it exists.
 	if "seed" in params["data"].keys():

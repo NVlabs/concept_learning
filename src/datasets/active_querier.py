@@ -52,7 +52,7 @@ class ActiveQuerier(object):
         # Start empty model.
         here = os.path.dirname(os.path.abspath(__file__))
         with open(here+args.config, 'r') as stream:
-            params = yaml.load(stream)
+            params = yaml.safe_load(stream)
 
         # Set up model parameters.
         self.seed = params["data"]["seed"]
